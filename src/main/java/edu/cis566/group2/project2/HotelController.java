@@ -29,7 +29,7 @@ public class HotelController {
 
             // 3. HotelController calls the first handler's (SuiteRoom)
             //    request handler method (SuiteRoom.handleBid) to process the bid.
-            String result = this.handler.handleRequest(bid_price, false);
+            String result = this.handler.handleBid(bid_price, false);
 
             // 10. HotelController displays the message returned from the last handler (StandardRoom)
             //     to the user in the GUI's outcome text area, which now says "We are sold out!"

@@ -16,7 +16,7 @@ abstract public class HotelRoom {
         this.successor = successor;
     }
 
-    public String handleRequest(float bid, boolean prevHasRooms) {
+    public String handleBid(float bid, boolean prevHasRooms) {
         boolean currHasRooms = this.numberOfRooms > 0;
         boolean hasRooms = prevHasRooms || currHasRooms;
         String message = null;
@@ -36,7 +36,7 @@ abstract public class HotelRoom {
             // 7. Since it does not have available rooms, the handler passes the bid,
             //    and a value indicating that handlers until this point still do not have rooms (prevHasRooms),
             //    to the next handler (StandardRoom) by calling its request handler method (StandardRoom.handleBid).
-            message = this.successor.handleRequest(bid, hasRooms);
+            message = this.successor.handleBid(bid, hasRooms);
         } else if(hasRooms) {
             message = "We do not have rooms at that price! Please submit another bid!";
         } else {

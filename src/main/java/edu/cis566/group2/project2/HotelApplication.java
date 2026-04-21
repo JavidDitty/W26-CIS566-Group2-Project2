@@ -5,7 +5,6 @@ import edu.cis566.group2.project2.room.StandardRoom;
 import edu.cis566.group2.project2.room.SuiteRoom;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -14,6 +13,8 @@ import java.io.IOException;
 public class HotelApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        // 1. HotelApplication initializes the bid request handlers
+        //    in the following order: SuiteRoom > DeluxeRoom > StandardRoom.
         SuiteRoom suiteRoom = new SuiteRoom();
         DeluxeRoom deluxeRoom = new DeluxeRoom();
         StandardRoom standardRoom = new StandardRoom();
